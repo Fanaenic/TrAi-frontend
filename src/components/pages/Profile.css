@@ -10,31 +10,22 @@
 
 .profile-main {
     flex: 1;
-    padding: 60px 100px;
+    padding: 60px 20px;
     display: flex;
     justify-content: center;
     align-items: flex-start;
     width: 100%;
     box-sizing: border-box;
-    transform: translateX(15%);
 }
 
 /* === Центрирующий контейнер === */
 .profile-wrapper {
     width: 100%;
-    display: flex;
-    justify-content: center;
-    padding: 0 20px;
-    box-sizing: border-box;
-}
-
-.profile-container {
+    max-width: 1200px;
     display: flex;
     gap: 30px;
-    max-width: 1200px;
-    margin: 0 auto;
-    width: 100%;
-    box-sizing: border-box;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 /* === Левая карточка: Профиль === */
@@ -65,11 +56,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
 }
 
 .avatar-placeholder svg {
     width: 48px;
     height: 48px;
+    stroke: #9D2628;
 }
 
 .choose-photo-btn {
@@ -81,12 +74,16 @@
     margin-top: 4px;
     transition: opacity 0.2s;
     text-align: center;
+    display: flex;
+    align-items: center;
+    gap: 4px;
 }
 
 .choose-photo-btn:hover {
     opacity: 0.8;
 }
 
+/* === Информация о пользователе в сетке 2x3 === */
 .profile-info-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -113,6 +110,8 @@
     border-radius: 6px;
     font-weight: 600;
     font-size: 14px;
+    min-width: 80px;
+    text-align: center;
 }
 
 .change-btn {
@@ -126,6 +125,9 @@
     cursor: pointer;
     transition: background-color 0.3s;
     align-self: flex-end;
+    display: flex;
+    align-items: center;
+    gap: 6px;
 }
 
 .change-btn:hover {
@@ -184,6 +186,7 @@
     gap: 8px;
     color: #4CAF50;
     font-size: 12px;
+    margin-top: 8px;
 }
 
 .dot {
@@ -202,7 +205,7 @@
 
 /* === AI Tips — с белой рамкой === */
 .ai-tips-card {
-    border: 1px solid #444; /* тонкая контурная рамка */
+    border: 1px solid #444;
     padding: 24px;
 }
 
@@ -240,6 +243,10 @@
     transition: background-color 0.3s;
     width: 100%;
     text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
 }
 
 .refresh-tips-btn:hover {
@@ -251,12 +258,10 @@
     .profile-main {
         padding: 50px 50px;
     }
-
-    .profile-container {
+    .profile-wrapper {
         flex-direction: column;
         align-items: stretch;
     }
-
     .profile-card,
     .side-cards {
         max-width: 100%;
@@ -267,23 +272,18 @@
     .profile-main {
         padding: 40px 20px;
     }
-
     .profile-info-grid {
         grid-template-columns: 1fr;
     }
-
     .info-row {
         justify-content: space-between;
     }
-
     .change-btn {
         align-self: center;
     }
-
     .side-cards {
         max-width: 100%;
     }
-
     .ai-tips-card,
     .telegram-card {
         padding: 20px;

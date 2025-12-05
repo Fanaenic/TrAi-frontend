@@ -10,35 +10,34 @@
 
 .dashboard-main {
     flex: 1;
-    padding: 60px 20px 40px;
+    padding: 40px 20px 20px; /* Уменьшено нижнее значение */
 }
 
-/* === Центрированный контейнер === */
 .dashboard-container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
+    width: 100%;
 }
 
 /* === Welcome Section === */
 .welcome-section {
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
 .welcome-title {
-    font-size: 36px;
+    font-size: 28px;
     font-weight: 600;
     color: white;
-    margin: 0 0 8px 0;
-    transform: translateX(-29%);
+    /*margin: 0 0 6px 0;*/
+    margin-left: -783px;
 }
 
 .welcome-subtitle {
-    font-size: 16px;
+    font-size: 14px;
     color: #CCCCCC;
-    margin: 0;
-    transform: translateX(-33%);
+    margin-left: -838px;
 
 }
 
@@ -46,63 +45,44 @@
 .dashboard-content {
     display: grid;
     grid-template-columns: 2fr 1fr;
-    gap: 30px;
+    gap: 24px;
 }
 
-.section-title {
-    font-size: 20px;
-    font-weight: 600;
-    color: white;
-    margin-bottom: 20px;
-}
-
-/* === Колонки === */
-.left-column {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-}
-
+.left-column,
 .right-column {
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 24px;
 }
 
-/* === Главная карточка слева === */
+/* === Главная карточка === */
 .main-dashboard-card {
     background: #1A1A1A;
     border-radius: 12px;
-    padding: 24px;
+    padding: 16px;
     display: flex;
     flex-direction: column;
-    gap: 24px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    gap: 16px;
     width: 100%;
 }
 
 /* === Activity Chart === */
 .activity-section h3 {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 600;
-    color: white;
-    margin: 0 0 12px 0;
+    margin: 0 0 10px 0;
 }
 
-.activity-chart-wrapper {
-    position: relative;
-}
-
-.chart-svg {
-    width: 100%;
-    height: 200px;
-    background: #1A1A1A;
+.activity-chart-wrapper .chart-svg {
+    height: 160px;
+    background: transparent;
     border-radius: 8px;
     padding: 10px;
+    display: flex;
 }
 
 .grid-line {
-    stroke: #2D2D2D;
+    stroke: #333;
     stroke-width: 1;
 }
 
@@ -163,86 +143,82 @@
     background: #9D2628;
 }
 
-/* === Нижняя часть: Weekly Progress + AI Plan === */
+/* === Weekly Progress + AI Plan === */
 .combined-bottom-section {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 24px;
+    gap: 16px;
     border-top: 1px solid #2D2D2D;
-    padding-top: 24px;
+    padding-top: 16px;
 }
 
-/* Вертикальный разделитель */
 .combined-bottom-section > div:first-child {
-    border-right: 1px solid #2D2D2D;
-    padding-right: 24px;
+    padding-right: 16px;
 }
 
 .combined-bottom-section > div:last-child {
-    padding-left: 24px;
+    padding-left: 16px;
 }
 
 .weekly-progress-section h3,
 .ai-plan-section h3 {
-    font-size: 18px;
-    font-weight: 600;
-    color: white;
-    margin-bottom: 16px;
+    font-size: 16px;
+    margin-bottom: 12px;
 }
 
 .trainings-card {
     background: #2D2D2D;
     border-radius: 8px;
-    padding: 16px;
+    padding: 12px;
 }
 
 .trainings-card h4 {
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 600;
     color: white;
-    margin: 0 0 8px 0;
+    margin: 0 0 6px 0;
 }
 
 .progress-bar-container {
     display: flex;
     align-items: center;
-    gap: 8px;
-    margin: 8px 0;
+    gap: 6px;
+    margin: 6px 0;
 }
 
 .progress-fill-background {
     flex: 1;
-    height: 12px;
+    height: 10px;
     background: #1A1A1A;
-    border-radius: 6px;
+    border-radius: 5px;
     overflow: hidden;
 }
 
 .progress-fill {
     height: 100%;
-    border-radius: 6px;
+    border-radius: 5px;
     transition: width 0.3s ease;
     background: #9D2628;
 }
 
 .progress-value {
     color: white;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 600;
-    min-width: 50px;
+    min-width: 45px;
 }
 
 .workouts-left {
     color: #ABABAB;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 600;
-    margin: 8px 0 0 0;
+    margin: 6px 0 0 0;
 }
 
 .progress-message {
     color: #CCCCCC;
-    font-size: 14px;
-    margin-top: 12px;
+    font-size: 13px;
+    margin-top: 10px;
     text-align: center;
 }
 
@@ -250,8 +226,8 @@
 .ai-plan-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
-    margin-bottom: 20px;
+    gap: 12px;
+    margin-bottom: 16px;
 }
 
 .ai-plan-item {
@@ -261,38 +237,31 @@
     gap: 8px;
 }
 
-.circular-progress {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-}
-
-.progress-svg {
-    transform: rotate(-90deg);
+.circular-progress svg {
+    width: 70px !important;
+    height: 70px !important;
+    rotate: 270deg !important;
 }
 
 .progress-numbers {
     color: white;
     font-weight: 600;
-    font-size: 16px;
+    font-size: 14px;
 }
 
 .progress-label {
     color: #CCCCCC;
-    font-size: 12px;
-    margin-top: 8px;
-    text-align: center;
+    font-size: 11px;
 }
 
 .add-meal-button {
     width: 100%;
-    padding: 12px;
+    padding: 10px;
     background: #9D2628;
     color: white;
     border: none;
     border-radius: 6px;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 600;
     cursor: pointer;
     transition: background-color 0.3s;
@@ -302,9 +271,19 @@
     background: #9D2628;
 }
 
-/* === Правая колонка: Quick Stats === */
-/* === Quick Stats Card === */
-/* === Quick Stats Card === */
+/* === Quick Stats === */
+.stats-card {
+    background: #1A1A1A;
+    border-radius: 12px;
+    padding: 16px;
+}
+
+.stats-card h3 {
+    font-size: 16px;
+    margin-bottom: 12px;
+}
+
+/* === Quick Stats === */
 .stats-card {
     background: #1A1A1A;
     border-radius: 12px;
@@ -318,27 +297,44 @@
     margin-bottom: 20px;
 }
 
+/* Контейнер списка — теперь НЕ центрируем содержимое */
 .quick-stats-list {
     display: flex;
     flex-direction: column;
     gap: 12px;
-    align-items: center; /* ← Центрируем все строки по горизонтали */
+    width: 100%; /* ← Занимает всю ширину карточки */
 }
 
+/* Каждая строка — выравнивание по всей ширине */
 .quick-stat-item {
     display: flex;
+    justify-content: space-between; /* ← Метка слева, значение справа */
     align-items: center;
-    gap: 8px;
-    width: 100%; /* ← Чтобы занимало всю ширину */
-    justify-content: center; /* ← Центрируем содержимое внутри строки */
+    width: 100%;
 }
 
+/* Лейбл (название) — фиксированная ширина для выравнивания */
 .stat-label {
     color: #CCCCCC;
     font-size: 14px;
     font-weight: 500;
-    text-align: right; /* ← Лейбл справа от значения */
-    min-width: 160px; /* ← Фиксированная ширина для выравнивания */
+    text-align: right;
+    width: 180px; /* ← Фиксированная ширина */
+    padding-right: 12px;
+    white-space: nowrap;
+}
+
+/* Значение — фиксированная ширина, одинаковая для всех */
+.stat-value {
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    background: #2D2D2D;
+    padding: 8px 16px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    width: 120px; /* ← Фиксированная ширина */
 }
 
 .stat-value {
@@ -349,42 +345,55 @@
     padding: 8px 16px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-    text-align: center; /* ← Центрируем текст внутри баттона */
+    width: 120px; /* ← Фиксированная ширина */
 }
+
+.stat-value {
+    color: white;
+    font-size: 13px;
+    font-weight: 600;
+    background: #2D2D2D;
+    padding: 6px 12px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
 /* === Actions Card === */
 .actions-card {
     background: #1A1A1A;
     border-radius: 12px;
-    padding: 24px;
-    height: 289px;
+    padding: 38px;
+    min-height: 200px;
 }
 
 .actions-card h3 {
-    font-size: 18px;
-    font-weight: 600;
-    color: white;
-    margin-bottom: 20px;
+    font-size: 16px;
+    margin-bottom: 12px;
 }
 
 .action-buttons {
     display: flex;
-    gap: 12px;
-    margin-bottom: 12px;
+    gap: 8px;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
 }
 
 .action-btn {
     display: flex;
     align-items: center;
     gap: 12px;
-    padding: 12px 16px;
+    padding: 10px 12px;
     border: none;
     border-radius: 8px;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 500;
     cursor: pointer;
     transition: background-color 0.3s;
-    width: 100%;
+    width: calc(50% - 4px);
     text-align: left;
+    background: #2D2D2D;
+    color: white;
 }
 
 .action-btn.red-btn {
@@ -401,15 +410,16 @@
     background: #9D2628;
     color: white;
     font-weight: 600;
-    padding: 16px;
+    padding: 12px;
     border-radius: 8px;
-    font-size: 16px;
+    font-size: 14px;
     width: 100%;
     display: flex;
     align-items: center;
     gap: 12px;
     justify-content: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    margin-top: 8px;
 }
 
 .action-btn.start-training-btn:hover {
@@ -418,21 +428,22 @@
 
 .action-icon {
     font-size: 16px;
+    color: white; /* ← Добавлено: иконки белые */
 }
 
 .bot-status {
     display: flex;
     align-items: center;
     gap: 8px;
-    color: #4CAF50;
+    color: #4CAF50; /* ← Зелёный текст */
     font-size: 14px;
-    height: 80px;
+    margin-top: 10px;
 }
 
 .status-dot {
     width: 8px;
     height: 8px;
-    background: #4CAF50;
+    background: #4CAF50; /* ← Зелёная точка */
     border-radius: 50%;
     animation: pulse 2s infinite;
 }
@@ -446,27 +457,22 @@
 /* === Responsive Design === */
 @media (max-width: 1024px) {
     .dashboard-main {
-        padding: 50px 20px 40px;
+        padding: 30px 20px 20px;
     }
-
     .dashboard-content {
         grid-template-columns: 1fr;
         gap: 20px;
     }
-
     .combined-bottom-section {
         grid-template-columns: 1fr;
     }
-
     .weekly-progress-section {
         border-bottom: 1px solid #2D2D2D;
-        padding-bottom: 24px;
+        padding-bottom: 12px;
     }
-
     .ai-plan-section {
-        padding-top: 24px;
+        padding-top: 12px;
     }
-
     .ai-plan-grid {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -474,31 +480,12 @@
 
 @media (max-width: 768px) {
     .dashboard-main {
-        padding: 40px 16px 30px;
+        padding: 20px 16px 15px;
     }
-
     .welcome-title {
-        font-size: 28px;
+        font-size: 24px;
     }
-
-    .main-dashboard-card {
-        padding: 16px;
-    }
-
-    .combined-bottom-section {
-        gap: 16px;
-    }
-
     .ai-plan-grid {
         grid-template-columns: 1fr;
-    }
-
-    .stat-row {
-        padding: 10px;
-    }
-
-    .action-btn.primary {
-        padding: 14px;
-        font-size: 15px;
     }
 }

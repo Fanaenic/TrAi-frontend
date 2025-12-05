@@ -1,3 +1,4 @@
+// src/components/shared/CircularProgress.tsx
 import React from 'react';
 
 export interface CircularProgressProps {
@@ -15,8 +16,8 @@ const CircularProgress: React.FC<CircularProgressProps> = ({
                                                                current,
                                                                total
                                                            }) => {
-    const size = 80;
-    const strokeWidth = 8;
+    const size = 70;
+    const strokeWidth = 6;
     const radius = (size - strokeWidth) / 2;
     const circumference = radius * 2 * Math.PI;
     const strokeDashoffset = circumference - (progress / 100) * circumference;
@@ -45,14 +46,14 @@ const CircularProgress: React.FC<CircularProgressProps> = ({
                     style={{ transition: 'stroke-dashoffset 0.3s ease' }}
                 />
                 <text
-                    x="40"
-                    y="40"
+                    x="35"
+                    y="35"
                     textAnchor="middle"
                     dominantBaseline="middle"
                     fill="white"
-                    fontSize="16"
+                    fontSize="14"
                     fontWeight="600"
-                    transform="rotate(90 40 40)" /* ← поворот на 90° */
+                    transform="rotate(90 35 35)"
                 >
                     {current}/{total}
                 </text>

@@ -1,11 +1,11 @@
+// src/components/pages/Dashboard.tsx
 import React from 'react';
 import './Dashboard.css';
 import Header from '../shared/Header/Header';
 import Footer from '../shared/Footer/Footer';
 import CircularProgress from '../shared/CircularProgress';
-import AddMealModal from "../shared/AddMealModal"; // предполагается, что он у вас есть
+import AddMealModal from "../shared/AddMealModal";
 
-// Типы остаются как у вас
 interface ActivityData {
     day: string;
     mood: number;
@@ -33,8 +33,6 @@ interface DashboardProps {
     quickStats: QuickStat[];
 }
 
-// ← Добавлен импорт модального окна
-
 const Dashboard: React.FC<DashboardProps> = ({
                                                  username,
                                                  lastTraining,
@@ -43,13 +41,11 @@ const Dashboard: React.FC<DashboardProps> = ({
                                                  aiPlan,
                                                  quickStats
                                              }) => {
-    // ← Добавлено состояние для модалки
     const [isAddMealOpen, setIsAddMealOpen] = React.useState(false);
 
     return (
         <div className="dashboard-page">
             <Header />
-
             <main className="dashboard-main">
                 <div className="dashboard-container">
                     <section className="welcome-section">
@@ -58,12 +54,11 @@ const Dashboard: React.FC<DashboardProps> = ({
                             your last training was {lastTraining} - perfect distance!
                         </p>
                     </section>
-
                     <div className="dashboard-content">
                         <div className="left-column">
                             <div className="card main-dashboard-card">
                                 <div className="activity-section">
-                                    <h3 className="chart-title">Your activity!</h3>
+                                    <h3>Your activity!</h3>
                                     <div className="activity-chart-wrapper">
                                         {(() => {
                                             const GRAPH_WIDTH_PCT = 92;
@@ -71,11 +66,10 @@ const Dashboard: React.FC<DashboardProps> = ({
                                             const END_X = 500;
                                             const Y_OFFSET = 40;
                                             const Y_SCALE = 120;
-
                                             return (
                                                 <svg
                                                     width={`${GRAPH_WIDTH_PCT}%`}
-                                                    height="200"
+                                                    height="160"
                                                     className="chart-svg"
                                                     viewBox="0 0 400 200"
                                                     style={{ margin: '0 auto' }}
@@ -167,7 +161,6 @@ const Dashboard: React.FC<DashboardProps> = ({
                                                 </svg>
                                             );
                                         })()}
-
                                         <div className="chart-legend">
                                             <div className="legend-item">
                                                 <div className="legend-color mood-color"></div>
@@ -180,7 +173,6 @@ const Dashboard: React.FC<DashboardProps> = ({
                                         </div>
                                     </div>
                                 </div>
-
                                 <div className="combined-bottom-section">
                                     <div className="weekly-progress-section">
                                         <h3>Your Weekly Progress</h3>
@@ -208,7 +200,6 @@ const Dashboard: React.FC<DashboardProps> = ({
                                             Perfect, you need last step! 💪
                                         </p>
                                     </div>
-
                                     <div className="ai-plan-section">
                                         <h3>AI Plan</h3>
                                         <div className="ai-plan-grid">
@@ -223,7 +214,6 @@ const Dashboard: React.FC<DashboardProps> = ({
                                                 />
                                             ))}
                                         </div>
-                                        {/* ← Обновлённая кнопка с обработчиком */}
                                         <button
                                             className="add-meal-button"
                                             onClick={() => setIsAddMealOpen(true)}
@@ -234,10 +224,9 @@ const Dashboard: React.FC<DashboardProps> = ({
                                 </div>
                             </div>
                         </div>
-
                         <div className="right-column">
                             <div className="stats-card">
-                                <h3 className="section-title">Quick stats</h3>
+                                <h3>Quick stats</h3>
                                 <div className="quick-stats-list">
                                     {quickStats.map((stat, index) => (
                                         <div key={index} className="quick-stat-item">
@@ -247,9 +236,8 @@ const Dashboard: React.FC<DashboardProps> = ({
                                     ))}
                                 </div>
                             </div>
-
                             <div className="actions-card">
-                                <h3 className="section-title">Actions</h3>
+                                <h3>Actions</h3>
                                 <div className="action-buttons">
                                     <button className="action-btn red-btn">
                                         <span className="action-icon">📊</span>
@@ -273,11 +261,8 @@ const Dashboard: React.FC<DashboardProps> = ({
                     </div>
                 </div>
             </main>
-
             <Footer />
-
-            {/* ← Модальное окно в самом конце */}
-            <   AddMealModal
+            <AddMealModal
                 isOpen={isAddMealOpen}
                 onClose={() => setIsAddMealOpen(false)}
             />

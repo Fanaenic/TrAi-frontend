@@ -1,5 +1,4 @@
 // src/components/pages/Profile.tsx
-
 import React from 'react';
 import './Profile.css';
 import Header from '../shared/Header/Header';
@@ -12,7 +11,7 @@ interface UserProfile {
     lifestyle: string;
     gender: string;
     aiPlan: string;
-    photoUrl?: string; // URL изображения или null для иконки по умолчанию
+    photoUrl?: string;
 }
 
 const mockUserData: UserProfile = {
@@ -22,7 +21,7 @@ const mockUserData: UserProfile = {
     lifestyle: 'Medium',
     gender: 'Male',
     aiPlan: '-400kcal',
-    photoUrl: undefined // пока без фото — покажем иконку
+    photoUrl: undefined
 };
 
 const Profile: React.FC = () => {
@@ -30,21 +29,18 @@ const Profile: React.FC = () => {
 
     const handleRefreshTips = () => {
         alert("AI tips refreshed! 🤖");
-        // Здесь можно добавить логику обновления советов через API
     };
 
     const handleLinkTelegram = () => {
         alert("Connecting to Telegram... (mock)");
-        // Здесь логика подключения к Telegram
     };
 
     return (
         <div className="profile-page">
             <Header />
-
             <main className="profile-main">
-                <div className="profile-wrapper"> {/* ← новый контейнер */}
-                    <div className="profile-container">
+                <div className="profile-wrapper">
+                    {/* Левая карточка */}
                     <div className="profile-card">
                         <div className="avatar-wrapper">
                             {mockUserData.photoUrl ? (
@@ -126,9 +122,7 @@ const Profile: React.FC = () => {
                         </div>
                     </div>
                 </div>
-                </div>
             </main>
-
             <Footer />
         </div>
     );
